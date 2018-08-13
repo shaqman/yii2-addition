@@ -1,0 +1,34 @@
+{
+    "name": "shaqman/yii2-addition",
+    "description": "Various helper and extended classes.",
+    "type": "yii2-extension",
+    "keywords": [
+        "yii2",
+        "helper",
+    ],
+    "homepage": "https://github.com/shaqman/yii2-addition",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Syakur Rahman",
+            "email": "shaqman2004@yahoo.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/shaqman/yii2-inline-script/issues",
+        "source": "https://github.com/shaqman/yii2-inline-script"
+    },
+    "require": {
+        "yiisoft/yii2": "~2",
+        "kartik-v/yii2-widget-select2": "~2.1.0",
+        "bedezign/yii2-audit": "^1.0",
+        "kartik-v/yii2-grid": "~3.0",
+        "kartik-v/yii2-widget-datepicker": "1.4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "shaqman\\addition\\": "./src"
+        }
+    }
+}

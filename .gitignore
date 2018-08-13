@@ -1,0 +1,18 @@
+# netbeans project files
+nbproject
+
+# intellij project files
+/.idea
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# vagrant runtime
+/.vagrant
+
+*.bak
