@@ -16,3 +16,7 @@ Thumbs.db
 /.vagrant
 
 *.bak
+
+# composer files
+/vendor
+composer.lock
