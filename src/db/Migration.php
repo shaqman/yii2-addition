@@ -43,6 +43,21 @@ class Migration extends YiiMigration {
         return $this->generateShortName("idx-$table-$column");
     }
 
+    protected function auditableColumns() {
+        return [
+            'created_by' => $this->integer(11)->unsigned()->notNull(),
+            'created_at' => $this->integer(11)->notNull(),
+            'updated_by' => $this->integer(11)->unsigned(),
+            'updated_at' => $this->integer(11),
+        ];
+    }
+
+    protected function softDeleteColumns() {
+        return [
+            'row_status' => $this->rowStatusColumnType()
+        ];
+    }
+
     public function executeYiiCommand(string $cmd) {
         $cmd = 'php ' . (YII_ENV == 'test' ? 'yii_test' : 'yii') . ' ' . $cmd;
 
@@ -74,21 +89,26 @@ class Migration extends YiiMigration {
 
     public function createTable($table, $columns, $options = null) {
         if ($this->includeAuditableColumns) {
-            $columns = ArrayHelper::merge($columns, [
-                        'created_by' => $this->integer(11)->unsigned()->notNull(),
-                        'created_at' => $this->integer(11)->notNull(),
-                        'updated_by' => $this->integer(11)->unsigned(),
-                        'updated_at' => $this->integer(11),
-            ]);
+            $columns = ArrayHelper::merge($columns, $this->auditableColumns());
         }
 
         if ($this->includeSoftDeleteColumns) {
-            $columns = ArrayHelper::merge($columns, [
-                        'row_status' => $this->rowStatusColumnType()
-            ]);
+            $columns = ArrayHelper::merge($columns, $this->softDeleteColumns());
         }
 
         parent::createTable($table, $columns, $options);
+    }
+
+    public function addAuditableColumns($table) {
+        foreach ($this->auditableColumns() as $column=>$type) {
+            $this->addColumn($table, $column,$type);
+        }
+    }
+
+    public function addSoftDeleteColumns($table) {
+        foreach ($this->softDeleteColumns() as $column=>$type) {
+            $this->addColumn($table, $column,$type);
+        }
     }
 
     public function auditableColumn($include = true) {
