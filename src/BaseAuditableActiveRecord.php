@@ -7,6 +7,10 @@ use shaqman\addition\behavior\BlameableBehavior;
 use shaqman\addition\traits\DropDownHelper;
 use yii\behaviors\TimestampBehavior;
 
+/**
+ *
+ * @property \common\models\User $creator
+ */
 abstract class BaseAuditableActiveRecord extends BaseActiveRecord {
 
     use DropDownHelper;

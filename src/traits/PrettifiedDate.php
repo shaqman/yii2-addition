@@ -2,6 +2,8 @@
 
 namespace shaqman\addition\traits;
 
+use yii\base\Exception;
+
 trait PrettifiedDate {
 
     public function __get($name) {

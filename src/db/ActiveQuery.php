@@ -2,10 +2,13 @@
 
 namespace shaqman\addition\db;
 
+use yii\db\Expression;
+
 /**
  * Description of ActiveQuery
  *
  * @author admin
+ * @see ActiveRecord
  */
 class ActiveQuery extends \yii\db\ActiveQuery {
 

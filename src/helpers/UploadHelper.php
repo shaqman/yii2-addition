@@ -20,6 +20,8 @@ use yii\web\UploadedFile;
  * Description of UploadHelper
  *
  * @author Yasser
+ *
+ * @property array $files
  */
 class UploadHelper extends BaseObject {
 

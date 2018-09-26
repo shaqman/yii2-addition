@@ -54,7 +54,6 @@ class MultipleWidget extends InputWidget {
             throw new Exception("Invalid configuration. Widgets must contain an array of widgets with it's configuration.");
         }
 
-        $primaryWidgetFound = false;
         foreach ($this->widgets as $widget) {
             if (empty($widget['class']) && empty($widget['inputType'])) {
                 throw new Exception("Invalid configuration. Either class or inputType must be set.");

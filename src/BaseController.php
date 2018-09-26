@@ -2,7 +2,7 @@
 
 namespace shaqman\addition;
 
-use common\widgets\GrowlAlert;
+use shaqman\addition\widgets\GrowlAlert;
 use shaqman\addition\form\ActiveForm;
 use Yii;
 use yii\base\Event;

@@ -16,6 +16,8 @@ use yii\swiftmailer\Message as SwiftMessage;
  * Description of Message
  *
  * @author syakur
+ *
+ * @property mixed $from
  */
 class Message extends SwiftMessage {
 
