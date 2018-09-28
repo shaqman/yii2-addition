@@ -13,8 +13,6 @@ use yii\behaviors\TimestampBehavior;
  */
 abstract class BaseAuditableActiveRecord extends BaseActiveRecord {
 
-    use DropDownHelper;
-
     /**
      * @inheritdoc
      */

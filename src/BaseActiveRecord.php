@@ -3,8 +3,11 @@
 namespace shaqman\addition;
 
 use shaqman\addition\db\ActiveRecord;
+use shaqman\addition\traits\DropDownHelper;
 
 abstract class BaseActiveRecord extends ActiveRecord {
+
+    use DropDownHelper;
 
     /** We assume this is the average seconds of a single page load.
      * That way the request should only survive for a single request.
