@@ -26,8 +26,6 @@
     "source": "https://github.com/shaqman/yii2-inline-script"
   },
   "require": {
-    "ext-sockets": "*",
-    "ext-simplexml": "*",
     "aki/yii2-vue": "~0.5.1",
     "kartik-v/yii2-krajee-base": "~1.8",
     "kartik-v/yii2-dialog": "~1.0.1",
