@@ -63,6 +63,9 @@ class UploadHelper extends BaseObject {
         if (empty($this->path)) {
             throw new Exception("Path cannot be empty.");
         }
+
+        $this->path = Yii::getAlias($this->path);
+
         if (!FileHelper::createDirectory($this->path)) {
             throw new Exception("Directory ($this->path) cannot be created. Most likely you don't have permission to modify the filesystem");
         }
